@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptProductos" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="aaf03453-c856-45d2-ab63-817b2a9e1007">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dataProductos" uuid="f5dce013-c317-43d1-915c-f6b896f8be54">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     producto.`cod_producto` AS producto_cod_producto,
+     producto.`nombre_prod` AS producto_nombre_prod,
+     producto.`modelo_prod` AS producto_modelo_prod,
+     producto.`imei_serie_producto` AS producto_imei_serie_producto,
+     producto.`descripcion_prod` AS producto_descripcion_prod,
+     producto.`precio_compra_prod` AS producto_precio_compra_prod,
+     producto.`precio_venta_publico_prod` AS producto_precio_venta_publico_prod,
+     producto.`iva_prod` AS producto_iva_prod,
+     producto.`stock_disponible_prod` AS producto_stock_disponible_prod,
+     categoria.`nombre_categoria` AS categoria_nombre_categoria,
+     marca.`nombre_marca` AS marca_nombre_marca,
+     proveedor.`nombre_empresa_pv` AS proveedor_nombre_empresa_pv
+FROM
+     `categoria` categoria INNER JOIN `producto` producto ON categoria.`id_categoria` = producto.`id_categoria`
+     INNER JOIN `proveedor` proveedor ON producto.`cod_proveedor` = proveedor.`cod_proveedor`
+     INNER JOIN `marca` marca ON producto.`marca_id_marca` = marca.`id_marca`]]>
+		</queryString>
+		<field name="producto_cod_producto" class="java.lang.Integer"/>
+		<field name="proveedor_nombre_empresa_pv" class="java.lang.String"/>
+		<field name="marca_nombre_marca" class="java.lang.String"/>
+		<field name="categoria_nombre_categoria" class="java.lang.String"/>
+		<field name="producto_nombre_prod" class="java.lang.String"/>
+		<field name="producto_modelo_prod" class="java.lang.String"/>
+		<field name="producto_imei_serie_producto" class="java.lang.String"/>
+		<field name="producto_descripcion_prod" class="java.lang.String"/>
+		<field name="producto_precio_compra_prod" class="java.math.BigDecimal"/>
+		<field name="producto_precio_venta_publico_prod" class="java.math.BigDecimal"/>
+		<field name="producto_iva_prod" class="java.lang.Boolean"/>
+		<field name="producto_stock_disponible_prod" class="java.lang.Integer"/>
+	</subDataset>
+	<parameter name="Logo" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     producto.`cod_producto` AS producto_cod_producto,
+     producto.`nombre_prod` AS producto_nombre_prod,
+     producto.`modelo_prod` AS producto_modelo_prod,
+     producto.`imei_serie_producto` AS producto_imei_serie_producto,
+     producto.`descripcion_prod` AS producto_descripcion_prod,
+     producto.`precio_compra_prod` AS producto_precio_compra_prod,
+     producto.`precio_venta_publico_prod` AS producto_precio_venta_publico_prod,
+     producto.`iva_prod` AS producto_iva_prod,
+     producto.`stock_disponible_prod` AS producto_stock_disponible_prod,
+     marca.`nombre_marca` AS marca_nombre_marca,
+     proveedor.`nombre_empresa_pv` AS proveedor_nombre_empresa_pv,
+     categoria.`nombre_categoria` AS categoria_nombre_categoria,
+     producto.`cod_proveedor` AS producto_cod_proveedor,
+     producto.`marca_id_marca` AS producto_marca_id_marca,
+     producto.`id_categoria` AS producto_id_categoria,
+     marca.`id_marca` AS marca_id_marca,
+     categoria.`id_categoria` AS categoria_id_categoria,
+     proveedor.`cod_proveedor` AS proveedor_cod_proveedor
+FROM
+     `marca` marca INNER JOIN `producto` producto ON marca.`id_marca` = producto.`marca_id_marca`
+     INNER JOIN `proveedor` proveedor ON producto.`cod_proveedor` = proveedor.`cod_proveedor`
+     INNER JOIN `categoria` categoria ON producto.`id_categoria` = categoria.`id_categoria`]]>
+	</queryString>
+	<field name="producto_cod_producto" class="java.lang.Integer"/>
+	<field name="producto_nombre_prod" class="java.lang.String"/>
+	<field name="producto_modelo_prod" class="java.lang.String"/>
+	<field name="producto_imei_serie_producto" class="java.lang.String"/>
+	<field name="producto_descripcion_prod" class="java.lang.String"/>
+	<field name="producto_precio_compra_prod" class="java.math.BigDecimal"/>
+	<field name="producto_precio_venta_publico_prod" class="java.math.BigDecimal"/>
+	<field name="producto_iva_prod" class="java.lang.Boolean"/>
+	<field name="producto_stock_disponible_prod" class="java.lang.Integer"/>
+	<field name="marca_nombre_marca" class="java.lang.String"/>
+	<field name="proveedor_nombre_empresa_pv" class="java.lang.String"/>
+	<field name="categoria_nombre_categoria" class="java.lang.String"/>
+	<field name="producto_cod_proveedor" class="java.lang.Integer"/>
+	<field name="producto_marca_id_marca" class="java.lang.Integer"/>
+	<field name="producto_id_categoria" class="java.lang.Integer"/>
+	<field name="marca_id_marca" class="java.lang.Integer"/>
+	<field name="categoria_id_categoria" class="java.lang.Integer"/>
+	<field name="proveedor_cod_proveedor" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="83" splitType="Stretch">
+			<image>
+				<reportElement x="143" y="0" width="84" height="77" uuid="6669a8eb-4bf9-4362-8dab-53a071ad20d8"/>
+				<imageExpression><![CDATA[$P{Logo}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="408" y="0" width="295" height="39" uuid="21640f8d-83aa-4277-a876-9fa0841a36c9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tempus Sans ITC" size="24" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[CellComp S.A.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="407" y="59" width="295" height="20" uuid="cd14366a-2f47-43ad-a407-48104ded4290"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tempus Sans ITC" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Servicio Tenico Garantizado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="407" y="39" width="295" height="20" uuid="8f4d6083-65ad-44e4-93d4-d711854a6809"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tempus Sans ITC" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Celulares Y Computadoras]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="121" splitType="Stretch">
+			<staticText>
+				<reportElement x="335" y="0" width="133" height="20" uuid="75a4d9f8-8c96-4499-839b-a715f666cb47"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tempus Sans ITC" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista Productos]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement key="table 3" style="table 3" x="0" y="25" width="802" height="90" uuid="484a2914-0383-4ee9-bcec-4737987d2061"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataProductos" uuid="a13d47c6-257c-43a0-8e55-c0cd41ecb2d9">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="41" uuid="86710eb4-0e7a-42bc-bbdb-3e6de90699c7">
+						<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="11" y="0" width="25" height="30" uuid="dd8b7e0e-e12e-4046-95a2-1450568f6eef"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Id]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="26" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="25" height="20" uuid="9d1ae75b-9ec3-4291-bd36-fbf0cd22fb67"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{producto_cod_producto}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="77" uuid="a9a04df2-11bf-4bbd-9db1-600b07cc6d5b">
+						<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="10" y="0" width="60" height="30" uuid="afe01b7e-4f8e-4b49-9115-47bf5c0075c5"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Producto]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="26" rowSpan="1">
+							<textField>
+								<reportElement x="10" y="0" width="60" height="20" uuid="b088add2-84a2-4c90-abb4-5980a3ee7a17"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{producto_nombre_prod}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="81" uuid="128f68ff-2bc2-4229-9d69-92fe22189e8e">
+						<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="10" y="0" width="65" height="30" uuid="aa89afb2-52af-404a-bc7f-bfd050cf3dd1"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Proveedor]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="26" rowSpan="1">
+							<textField>
+								<reportElement x="10" y="0" width="65" height="20" uuid="7c5b49c9-36df-48b8-8073-c1d8663f58d7"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{proveedor_nombre_empresa_pv}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="621ffd1e-7554-4d7a-b809-f0acd9e93377">
+						<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="12" y="0" width="54" height="30" uuid="87f98b91-4ac1-45e1-9990-47b9d8494c5f"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Marca]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="26" rowSpan="1">
+							<textField>
+								<reportElement x="12" y="0" width="54" height="20" uuid="bcf6ea67-72c2-40fa-b102-9de85337c3e1"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{marca_nombre_marca}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="71" uuid="1172750f-71d1-41a4-9441-211cbff095c4">
+						<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="11" y="0" width="54" height="30" uuid="6b05f256-9174-4f93-b20d-0ef29aa0ceeb"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Categoria]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="26" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="54" height="20" uuid="e783a801-5aa4-40ee-a9f3-dab6ad507338"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{categoria_nombre_categoria}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="9445a6c3-b486-4f06-8412-71d78b1c9f70">
+						<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="10" y="0" width="54" height="30" uuid="4c2a8445-6a51-49d6-877e-97435d713f01"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Modelo]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="26" rowSpan="1">
+							<textField>
+								<reportElement x="10" y="0" width="54" height="20" uuid="8d527382-a423-4940-b39f-bc0f94f62247"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{producto_modelo_prod}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="de31b198-3f99-4b27-8018-28bc9df1eb09">
+						<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="13" y="0" width="49" height="30" uuid="be585cb2-d537-4233-8329-8428b2b703c3"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[IMEI]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="26" rowSpan="1">
+							<textField>
+								<reportElement x="13" y="0" width="49" height="20" uuid="5137dc47-20be-4c1f-ad1c-d73bd6b6cd50"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{producto_imei_serie_producto}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="85" uuid="4265acb1-bcf2-4e34-bf49-50a12aca0173">
+						<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="10" y="0" width="70" height="30" uuid="22f4b86c-56a1-4c6f-8510-40b15468e06c"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Descripcion]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="26" rowSpan="1">
+							<textField>
+								<reportElement x="10" y="0" width="70" height="20" uuid="c5f0e808-9c93-4ec5-a1ed-83eef63caa10"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{producto_descripcion_prod}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="68" uuid="f965837e-1359-4ae2-9b0b-73e285028aa7">
+						<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="12" y="0" width="50" height="30" uuid="7aab0179-966f-4508-9832-2863449d7c20"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Precio Compra]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="26" rowSpan="1">
+							<textField>
+								<reportElement x="12" y="0" width="50" height="20" uuid="1a5350cf-c078-44c6-be1b-f7fb9c260be1"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{producto_precio_compra_prod}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="66" uuid="a56029a0-b012-46a6-82ab-d318dd71b111">
+						<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="10" y="0" width="50" height="30" uuid="25e48ff0-d8c6-4bda-bd56-0e1ad33e2ca9"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Precio Venta]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="26" rowSpan="1">
+							<textField>
+								<reportElement x="10" y="0" width="50" height="20" uuid="085f9b0d-4a56-44cb-8a61-dcff2a467d47"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{producto_precio_venta_publico_prod}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="45" uuid="46dd17e8-6820-458f-8884-e70ca1b215fa">
+						<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="12" y="0" width="28" height="30" uuid="afbc2592-07b3-4a26-b0f4-9e9a8be49caa"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Iva]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="26" rowSpan="1">
+							<textField>
+								<reportElement x="12" y="0" width="28" height="20" uuid="fde67b37-78ae-4d19-a3a6-d082097a4d4c"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{producto_iva_prod}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="46" uuid="cd719c92-77f3-43fe-a229-c21b562acf3d">
+						<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="10" y="0" width="29" height="30" uuid="5ab539ae-d87c-4111-a695-07ee9492e8ab"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Stock Disponible]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 3_TD" height="26" rowSpan="1">
+							<textField>
+								<reportElement x="10" y="0" width="29" height="20" uuid="cae64802-7f80-4bb1-be98-4b122475fd37"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{producto_stock_disponible_prod}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="35" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="43" splitType="Stretch">
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss Z">
+				<reportElement x="642" y="0" width="160" height="20" uuid="95f688ee-64d7-4f02-94b4-9ef04e9e7983"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tempus Sans ITC"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="351" y="20" width="100" height="20" uuid="13c361c6-8a85-4c65-b2c4-5d7fb71f8e4c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tempus Sans ITC"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptClientes" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ace8ddc8-5b74-4adf-b927-1e8dd466fd04">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dataClientes" uuid="90422978-24ec-4fad-92d1-30223e60ff10">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     cliente.`cod_cliente` AS cliente_cod_cliente,
+     cliente.`ruc_clie` AS cliente_ruc_clie,
+     cliente.`nombres_clie` AS cliente_nombres_clie,
+     cliente.`apellidos_clie` AS cliente_apellidos_clie,
+     cliente.`dirección_clie` AS cliente_dirección_clie,
+     cliente.`empresa` AS cliente_empresa,
+     cliente.`lugar_trabajo` AS cliente_lugar_trabajo,
+     cliente.`telefono_clie` AS cliente_telefono_clie,
+     cliente.`email_clie` AS cliente_email_clie
+FROM
+     `cliente` cliente]]>
+		</queryString>
+		<field name="cliente_cod_cliente" class="java.lang.Integer"/>
+		<field name="cliente_ruc_clie" class="java.lang.String"/>
+		<field name="cliente_nombres_clie" class="java.lang.String"/>
+		<field name="cliente_apellidos_clie" class="java.lang.String"/>
+		<field name="cliente_dirección_clie" class="java.lang.String"/>
+		<field name="cliente_empresa" class="java.lang.String"/>
+		<field name="cliente_lugar_trabajo" class="java.lang.String"/>
+		<field name="cliente_telefono_clie" class="java.lang.String"/>
+		<field name="cliente_email_clie" class="java.lang.String"/>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     cliente.`cod_cliente` AS cliente_cod_cliente,
+     cliente.`ruc_clie` AS cliente_ruc_clie,
+     cliente.`nombres_clie` AS cliente_nombres_clie,
+     cliente.`apellidos_clie` AS cliente_apellidos_clie,
+     cliente.`dirección_clie` AS cliente_dirección_clie,
+     cliente.`empresa` AS cliente_empresa,
+     cliente.`lugar_trabajo` AS cliente_lugar_trabajo,
+     cliente.`telefono_clie` AS cliente_telefono_clie,
+     cliente.`email_clie` AS cliente_email_clie
+FROM
+     `cliente` cliente]]>
+	</queryString>
+	<field name="cliente_cod_cliente" class="java.lang.Integer"/>
+	<field name="cliente_ruc_clie" class="java.lang.String"/>
+	<field name="cliente_nombres_clie" class="java.lang.String"/>
+	<field name="cliente_apellidos_clie" class="java.lang.String"/>
+	<field name="cliente_dirección_clie" class="java.lang.String"/>
+	<field name="cliente_empresa" class="java.lang.String"/>
+	<field name="cliente_lugar_trabajo" class="java.lang.String"/>
+	<field name="cliente_telefono_clie" class="java.lang.String"/>
+	<field name="cliente_email_clie" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement x="407" y="70" width="295" height="20" uuid="44ebedd7-6501-48c7-ac43-edda555a2d31"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tempus Sans ITC" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Servicio Tenico Garantizado]]></text>
+			</staticText>
+			<image>
+				<reportElement x="143" y="11" width="84" height="77" uuid="7f7a0c8b-2988-4248-9117-2f9b722aee8d"/>
+				<imageExpression><![CDATA["D:\\Kevin-Pc\\Documenti\\4TO SEMESTRE\\PROGRAMACION IV\\SEGUNDO PARCIAL\\AVANCE DEL PROYECTO ULTIMO\\4to_Semestre_Proyecto_Hemi_2_Sistema_CellComp\\4to_Semestre_Proyecto_Hemi_2_Sistema_CellComp\\src\\Archivos\\Imagenes Menu Princpal\\cellcomp logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="407" y="50" width="295" height="20" uuid="853cc023-a6bc-400e-b6fb-c07dd9cbaf0c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tempus Sans ITC" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Celulares Y Computadoras]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="408" y="11" width="295" height="39" uuid="98e321b9-249e-4d1b-b63a-ded6ee3bba2e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tempus Sans ITC" size="24" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[CellComp S.A.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="18" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement x="334" y="0" width="133" height="20" uuid="1ca55fda-e3d3-47eb-a53a-0e752e640185"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tempus Sans ITC" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista Clientes]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="2" y="30" width="800" height="60" uuid="e356cae0-0f4d-4d2e-92d0-42bfcbb3ec46"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataClientes" uuid="dc4d4a5c-2c5b-41d2-aee5-8b68c8221b85">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="53" uuid="a5757d00-18dc-4825-8d78-145329c43df8">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="11" y="0" width="31" height="30" uuid="4c7dd60f-6ad7-48c3-93f5-edcaa8f0e396"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Id]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="31" height="20" uuid="7de46d78-4c28-4492-8c1d-37fa670684f4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cliente_cod_cliente}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="04e14cd6-d925-4bda-888c-fb9089cb3237">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="11" y="0" width="51" height="30" uuid="9657c1c5-dfaf-4423-a923-af0d6c8ed1ee"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[RUC]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="51" height="20" uuid="b2835534-3c3c-45ab-9467-f29e41cea9bc"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cliente_ruc_clie}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="83" uuid="c5b8e4a8-9d77-4ea3-9b85-aa1e4c731fae">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="11" y="0" width="66" height="30" uuid="d740dedd-7e78-47a4-9317-ec1f7c4b135f"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Nombres]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="66" height="20" uuid="b399866d-d29b-4710-a8ba-2fa9190c5269"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cliente_nombres_clie}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="25cd42fc-4dd8-4e66-99c8-f1e8bc1e1bed">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="11" y="0" width="79" height="30" uuid="5db81390-d803-4372-95cb-7e22ca458c8c"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Apellidos]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="79" height="20" uuid="b4bb3a12-da3a-4636-8143-5b7d4f60060b"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cliente_apellidos_clie}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="ab0d30e7-eefe-4d8d-96fa-b9134afd58a7">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="11" y="0" width="79" height="30" uuid="c62333e9-cf56-42a7-9e08-e85451c63fef"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Direccion]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="79" height="20" uuid="5f09f0fc-1c55-40c7-b4bc-5f5cbf234783"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cliente_dirección_clie}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="ea210076-9a14-4189-a84d-03ea9b5ab25e">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="11" y="0" width="79" height="30" uuid="b7d487be-4144-442d-9833-9b1c248f4bc9"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Empresa]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="79" height="20" uuid="058b70c8-7201-46fc-9687-aa35106228b6"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cliente_empresa}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="cfbc6df4-28e8-4c48-a7d7-03b1e816de6a">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="11" y="0" width="79" height="30" uuid="505461be-bc32-4126-a065-dd63b17bea6e"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Lugar Trabajo]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="79" height="20" uuid="e097241f-bfee-45b0-a8e3-bb944f0c4297"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cliente_lugar_trabajo}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="82" uuid="927e1d43-b177-458d-af44-962b6a1ea08c">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="11" y="0" width="64" height="30" uuid="5b37cafb-7aae-4b23-bfa3-0b1576d91c63"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Telefono]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="64" height="20" uuid="628d6430-9d2a-48d7-8f0d-69956d76d369"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cliente_telefono_clie}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="141" uuid="c4ab33b5-ab78-4191-9d8c-9520e6cdba33">
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="11" y="0" width="120" height="30" uuid="920a38bc-ff2f-4266-a2c3-e8d57fb45594"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Email]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 1_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="11" y="0" width="120" height="20" uuid="54b5b6d3-cc50-404d-b9db-e729416e1164"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Tempus Sans ITC"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cliente_email_clie}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="40" splitType="Stretch">
+			<textField>
+				<reportElement x="351" y="20" width="100" height="20" uuid="41cdd077-7c5c-426b-a559-6084322a76f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tempus Sans ITC"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEE, d MMM yyyy HH:mm:ss Z">
+				<reportElement x="642" y="0" width="160" height="20" uuid="bf149902-b016-48b8-907b-92da8491cc5d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Tempus Sans ITC"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
